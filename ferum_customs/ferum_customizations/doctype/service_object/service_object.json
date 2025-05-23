@@ -1,0 +1,22 @@
+    {
+        "doctype": "DocType",
+        "name": "ServiceObject",
+        "module": "Ferum Customizations",  
+        "custom": 0,
+        "naming_rule": "By fieldname",
+        "autoname": "field:object_name_address",
+        "title_field": "object_name_address",
+        "track_changes": 1,
+        "fields": [
+          {"fieldname": "object_name_address", "label": "Название/Адрес объекта", "fieldtype": "Small Text", "reqd": 1, "in_list_view": 1, "unique": 1},
+          {"fieldname": "object_type", "label": "Тип объекта", "fieldtype": "Select", "options": "Школа\nОфис\nСклад\nБольница\nПроизводственное помещение\nДругое", "in_list_view": 1},
+          {"fieldname": "object_photo_plan", "label": "Фото/Чертёж объекта", "fieldtype": "Attach Image"},
+          {"fieldname": "geolocation", "label": "Геолокация", "fieldtype": "Geolocation"},
+          {"fieldname": "assigned_engineers_table", "label": "Закреплённые инженеры", "fieldtype": "Table", "options": "AssignedEngineerItem"}
+        ],
+         "permissions": [
+          {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+          {"role": "Project Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+          {"role": "Инженер", "read": 1}
+        ]
+    }
